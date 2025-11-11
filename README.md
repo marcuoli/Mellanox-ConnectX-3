@@ -5,11 +5,14 @@ https://network.nvidia.com/support/firmware/identification/
 
 https://network.nvidia.com/support/firmware/firmware-downloads/
 
+```bash
 [root@ ~]# lspci | grep Mellanox
 02:00.0 Ethernet controller: Mellanox Technologies MT27500 Family [ConnectX-3]
 [root@ ~]#
+```
 
 
+```bash
 # mft-4.25.1-11-x86_64-rpm.tgz
 
 tar xzvf mft-4.25.1-11-x86_64-rpm.tgz
@@ -37,12 +40,15 @@ Loading MST PCI module - Success
 Loading MST PCI configuration module - Success
 Create devices
 [root@ ~]#
+```
 
 
+```bash
 [root@ ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 set SRIOV_EN=1 NUM_OF_VFS=8
 [root@ ~]#
+```
 
-
+```bash
 [root@ ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 query
 
 Device #1:
@@ -73,8 +79,9 @@ Configurations:                                      Next Boot
         IP_VER_P2                                   IPv4(0)
         CQ_TIMESTAMP                                True(1)
 [root@ ~]#
+```
 
-
+```bash
 [root@~]# mlxfwmanager --query
 Querying Mellanox devices firmware ...
 
@@ -95,4 +102,4 @@ Device #1:
   Status:           No matching image found
 
 [root@~]#
-
+```
