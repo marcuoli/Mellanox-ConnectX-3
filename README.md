@@ -32,8 +32,9 @@ Updating / installing...
    1:mft-4.25.1-11                    ################################# [100%]
 -I- In order to start mst, please run "mst start".
 [root@~ mft-4.25.1-11-x86_64-rpm]#
+```
 
-
+```bash
 [root@ ~]# mst start
 Starting MST (Mellanox Software Tools) driver set
 Loading MST PCI module - Success
