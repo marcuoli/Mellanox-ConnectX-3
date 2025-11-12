@@ -104,3 +104,10 @@ Device #1:
 
 [root@~]#
 ```
+
+
+```bash
+dnf install libtool automake autoconf kernel-rpm-macros
+```
+
+```
