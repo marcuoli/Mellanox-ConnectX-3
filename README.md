@@ -64,6 +64,30 @@ Geographical Address:  ASIC 60
 
 
 ```bash
+[root@localhost ~]# mlxfwmanager --query
+Querying Mellanox devices firmware ...
+
+Device #1:
+----------
+
+  Device Type:      ConnectX3
+  Part Number:      MCX354A-FCB_A2-A5
+  Description:      ConnectX-3 VPI adapter card; dual-port QSFP; FDR IB (56Gb/s) and 40GigE; PCIe3.0 x8 8GT/s; RoHS R6
+  PSID:             MT_1090120019
+  PCI Device Name:  0000:02:00.0
+  Port1 MAC:        248a0723bd75
+  Port2 MAC:        248a0723bd76
+  Versions:         Current        Available
+     FW             2.42.5000      N/A
+     PXE            3.4.0752       N/A
+
+  Status:           No matching image found
+
+[root@localhost ~]#
+```
+
+
+```bash
 [root@localhost ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 set SRIOV_EN=1 NUM_OF_VFS=8
 [root@localhost ~]#
 ```
@@ -98,29 +122,6 @@ Configurations:                                      Next Boot
         IP_VER_P1                                   IPv4(0)
         IP_VER_P2                                   IPv4(0)
         CQ_TIMESTAMP                                True(1)
-[root@localhost ~]#
-```
-
-```bash
-[root@localhost ~]# mlxfwmanager --query
-Querying Mellanox devices firmware ...
-
-Device #1:
-----------
-
-  Device Type:      ConnectX3
-  Part Number:      MCX354A-FCB_A2-A5
-  Description:      ConnectX-3 VPI adapter card; dual-port QSFP; FDR IB (56Gb/s) and 40GigE; PCIe3.0 x8 8GT/s; RoHS R6
-  PSID:             MT_1090120019
-  PCI Device Name:  0000:02:00.0
-  Port1 MAC:        248a0723bd75
-  Port2 MAC:        248a0723bd76
-  Versions:         Current        Available
-     FW             2.42.5000      N/A
-     PXE            3.4.0752       N/A
-
-  Status:           No matching image found
-
 [root@localhost ~]#
 ```
 
