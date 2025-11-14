@@ -6,9 +6,9 @@ https://network.nvidia.com/support/firmware/identification/
 https://network.nvidia.com/support/firmware/firmware-downloads/
 
 ```bash
-[root@ ~]# lspci | grep Mellanox
+[root@localhost ~]# lspci | grep Mellanox
 02:00.0 Ethernet controller: Mellanox Technologies MT27500 Family [ConnectX-3]
-[root@ ~]#
+[root@localhost ~]#
 ```
 
 
@@ -18,7 +18,7 @@ https://network.nvidia.com/support/firmware/firmware-downloads/
 tar xzvf mft-4.25.1-11-x86_64-rpm.tgz
 cd mft-4.25.1-11-x86_64-rpm
 
-[root@~ mft-4.25.1-11-x86_64-rpm]# ./install.sh
+[root@localhost ~ mft-4.25.1-11-x86_64-rpm]# ./install.sh
 -I- Removing all installed mft packages: mft  kernel-mft
 -I- Building the MFT kernel binary RPM...
 -I- Installing the MFT RPMs...
@@ -35,7 +35,7 @@ Updating / installing...
 ```
 
 ```bash
-[root@ ~]# mst start
+[root@localhost ~]# mst start
 Starting MST (Mellanox Software Tools) driver set
 Loading MST PCI module - Success
 Loading MST PCI configuration module - Success
@@ -45,12 +45,31 @@ Create devices
 
 
 ```bash
-[root@ ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 set SRIOV_EN=1 NUM_OF_VFS=8
-[root@ ~]#
+[root@localhost ~]# mstflint -d 01:00.0 q
+Image type:            FS2
+FW Version:            2.42.5000
+FW Release Date:       5.9.2017
+Product Version:       02.42.50.00
+Rom Info:              type=PXE version=3.4.752
+Device ID:             4099
+Description:           Node             Port1            Port2            Sys image
+GUIDs:                 248a07030085e6f7 248a07030085e6f8 248a07030085e6f9 248a07030085e6fa
+MACs:                                       248a0785e6f7     248a0785e6f8
+VSD:
+PSID:                  MT_1090120019
+INI revision:          0x562d
+Geographical Address:  ASIC 60
+[root@localhost ~]#
+```
+
+
+```bash
+[root@localhost ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 set SRIOV_EN=1 NUM_OF_VFS=8
+[root@localhost ~]#
 ```
 
 ```bash
-[root@ ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 query
+[root@localhost ~]# mlxconfig -d /dev/mst/mt4099_pciconf0 query
 
 Device #1:
 ----------
@@ -79,11 +98,11 @@ Configurations:                                      Next Boot
         IP_VER_P1                                   IPv4(0)
         IP_VER_P2                                   IPv4(0)
         CQ_TIMESTAMP                                True(1)
-[root@ ~]#
+[root@localhost ~]#
 ```
 
 ```bash
-[root@~]# mlxfwmanager --query
+[root@localhost ~]# mlxfwmanager --query
 Querying Mellanox devices firmware ...
 
 Device #1:
@@ -102,7 +121,7 @@ Device #1:
 
   Status:           No matching image found
 
-[root@~]#
+[root@localhost ~]#
 ```
 
 
