@@ -43,7 +43,6 @@ Create devices
 [root@ ~]#
 ```
 
-
 ```bash
 [root@localhost ~]# mstflint -d 01:00.0 q
 Image type:            FS2
@@ -51,7 +50,7 @@ FW Version:            2.42.5000
 FW Release Date:       5.9.2017
 Product Version:       02.42.50.00
 Rom Info:              type=PXE version=3.4.752
-Device ID:             4099
+Device ID:             4099 <-- ConnectX-3 Pro shows "4103" whereas ConnectX-3 shows "4099"
 Description:           Node             Port1            Port2            Sys image
 GUIDs:                 248a07030085e6f7 248a07030085e6f8 248a07030085e6f9 248a07030085e6fa
 MACs:                                       248a0785e6f7     248a0785e6f8
